@@ -14,7 +14,7 @@ img_container = {"img": None}
 gloss_list = ['doctor', 'emergency', 'fire', 'firefighter', 'help', 'hurt', 'medicine', 'police']
 frame_step = 4
 MAX_SEQ_LENGTH = 15
-
+IMG_SIZE = 224
 frame_sequence = []
 frame_count = 0
 
@@ -73,6 +73,7 @@ def video_frame_callback(frame):
 def setprediction(frame, output):
     global frame_count, frame_sequence
     frame_count += 1
+    frame = cv2.resize(frame,(IMG_SIZE,IMG_SIZE))
     keypoint = getKeypoint(frame)
 
     if frame_count % frame_step == 0:
