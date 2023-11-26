@@ -3,5 +3,4 @@ mediapipe==0.10.5
 numpy
 tensorflow==2.13.1
 streamlit==1.28.2
-threading
 streamlit_webrtc
